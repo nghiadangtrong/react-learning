@@ -14,11 +14,11 @@ var config = {
     module: {
         rules: [
             {
-                test: '/\.js?/',
-                include: SRC_DIR,
+                test: /\.js?/,
+                exclude: /node_modules/,
                 loader: 'babel-loader',
                 'query': {
-                    presets: ['es2018', 'stage-2', 'react']
+                    presets: [ 'env', 'react', 'stage-2']
                 }
             }
         ]
