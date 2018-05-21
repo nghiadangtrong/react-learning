@@ -5,45 +5,18 @@ import {Header} from './components/Header';
 import {Home} from './components/Home';
 import {Root} from './components/Root';
 
-class App extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            homeLink: 'Home'
-        }
-    }
+import {Route} from 'react-route';
 
-    onChangeLinkName(newName){
-        this.setState({
-            homeLink: newName
-        });
-    }
-    
-    render() {
-        var user = {
-            name: "Anna",
-            age: '18',
-            hobbies: ['Sports', 'Reading']
-        };
+class App extends React.Component{
+    render(){
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-xs-10 col-xs-offset-1">
-                        <Header homeLink={this.state.homeLink}> children</Header>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-10 col-xs-offset-1">
-                        <Home 
-                            name={'Max'} age={20} user={user}
-                            change={this.onChangeLinkName.bind(this)}
-                            homeLink={this.state.homeLink}
-                            />
-                    </div>
+
                 </div>
             </div>
         );
-    };
+    }
 }
 // like react-dom.render();
 render(<App />, window.document.getElementById('app'));
