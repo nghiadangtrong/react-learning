@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 
 import {Header} from './components/Header';
 import {Home} from './components/Home';
+import {Root} from './components/Root';
 
 class App extends React.Component{
     constructor(){
@@ -35,7 +36,9 @@ class App extends React.Component{
                     <div className="col-xs-10 col-xs-offset-1">
                         <Home 
                             name={'Max'} age={20} user={user}
-                            change={this.onChangeLinkName.bind(this)}/>
+                            change={this.onChangeLinkName.bind(this)}
+                            homeLink={this.state.homeLink}
+                            />
                     </div>
                 </div>
             </div>
